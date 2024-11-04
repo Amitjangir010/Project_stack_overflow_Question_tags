@@ -1,15 +1,74 @@
-# Project_stack_overflow_Question_tags
+# 🏷️ Stack Overflow Tag Predictor
 
-## About
-This project helps with Stack Overflow tags. It analyses questions and tries to work out the best tags for them. This can make finding questions you're interested in easier.
+An intelligent deep learning system that automatically suggests relevant tags for Stack Overflow questions using NLP and LSTM networks.
 
-## Goal
-We want to make it easier to find and organize questions on Stack Overflow by improving how tags are used.
+## 🎯 Project Overview
 
-## How It Works
-- **Preparing Data**: We get the questions ready to use in our models.
-- **Model making**: We build a tool that guesses the right tags for a question.
-- **Checking Our work**: We see how good our tool is at guessing tags.
+This project uses advanced NLP techniques and deep learning to analyze Stack Overflow questions and predict the most relevant tags. It helps in:
+- Automatically categorizing questions
+- Improving question discoverability
+- Assisting users in tag selection
+- Maintaining consistent tagging
 
-- **Model Development**: We utilized an LSTM (Long Short-Term Memory) model, incorporating GloVe 6B 100d embeddings for advanced word representation. This combination allows for more accurate prediction of relevant tags.
+## ✨ Key Features
 
+- **Multi-Label Classification**: Predicts multiple relevant tags per question
+- **Deep Learning Model**: Uses LSTM networks with GloVe embeddings
+- **Pre-trained Embeddings**: Utilizes GloVe word vectors for better semantic understanding
+- **Real-time Prediction**: Quick tag suggestions for new questions
+- **Top-10 Tags**: Returns most relevant tags ranked by confidence
+
+## 🛠️ Technical Stack
+
+- **Python 3.11**
+- **Deep Learning**: TensorFlow/Keras
+- **NLP Processing**: NLTK, GloVe embeddings
+- **Data Processing**: Pandas, NumPy
+- **Text Processing**: Regular expressions, tokenization
+- **Visualization**: Matplotlib, Seaborn
+
+## 📊 Model Architecture
+
+```
+Input -> GloVe Embedding Layer -> LSTM Layer -> Dense Layers -> Output
+```
+
+### Components:
+- Embedding Layer (100d GloVe)
+- LSTM with 64 units
+- Dense layers with ReLU
+- Output layer with sigmoid activation
+
+## 📈 Sample Predictions
+
+```python
+Question: "How to handle authentication in Django with PostgreSQL?"
+Predicted Tags: ['django', 'postgresql', 'authentication', 'python', 'database']
+```
+
+## 🔄 Training Process
+
+1. Text Preprocessing
+   - Cleaning & normalization
+   - Tokenization
+   - Sequence padding
+
+2. Model Training
+   - GloVe embedding initialization
+   - LSTM network training
+   - Multi-label classification
+
+3. Optimization
+   - Dropout for regularization
+   - Learning rate tuning
+   - Batch size optimization
+
+## 🎯 Future Improvements
+
+- [ ] Add attention mechanism
+- [ ] Implement transformer architecture
+- [ ] Add more language support
+- [ ] Improve preprocessing pipeline
+
+---
+Made with ❤️ by Amit Jangir
